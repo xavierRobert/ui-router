@@ -1219,7 +1219,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
         return $q.reject(error);
       });
 
-      transition.catch(angular.noop);
+      transition['catch'](angular.noop);
       return transition;
     };
 
