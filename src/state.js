@@ -1219,11 +1219,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
         return $q.reject(error);
       });
 
-      console.log('transition has: ' + Object.keys(transition));
-      console.log('transition.catch is: ' + transition['catch']);
-      console.log('transition.then is: ' + transition.then);
-      console.log('angular.noop is: ' + angular.noop);
-      transition['catch'](angular.noop);
+      silenceUncaughtInPromise(transition);
       return transition;
     };
 
