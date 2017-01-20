@@ -1219,6 +1219,9 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
         return $q.reject(error);
       });
 
+      console.log('transition is: ' + transition);
+      console.log('transition.catch is: ' + transition['catch']);
+      console.log('angular.noop is: ' + angular.noop);
       transition['catch'](angular.noop);
       return transition;
     };
